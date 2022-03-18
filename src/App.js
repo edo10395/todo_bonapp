@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<TodoList />} />
-            {/* <Route path="/idTodo/:id" element={<Detail />} /> */}
+            <Route path="/idTodo/:id" element={<Detail />} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
