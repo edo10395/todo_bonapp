@@ -1,4 +1,4 @@
-import { GET_DATA, CREATE_DATA ,DELETE_DATA} from "./const";
+import { GET_DATA, CREATE_DATA ,DELETE_DATA, UPDATE_DATA} from "./const";
 import Swal from "sweetalert2";
 
 export function deleteData(id) {
@@ -54,10 +54,16 @@ export function createData(data) {
             payload: { ...data, id: max > 0 ? max + 1 : 1, 
             createdAt:  `${hrs}:${min} ${amPm} ${day} ${month}` } 
         })
-        Swal.fire(
-            'INFORMASI',
-            'Your file has been saved.',
-            'success'
-        )
+        // Swal.fire(
+        //     'INFORMASI',
+        //     'Your file has been saved.',
+        //     'success'
+        // )
+    };
+}
+
+export function updateData(data) {
+    return async (dispatch, getState) => {
+        dispatch({ type: UPDATE_DATA, payload: data })
     };
 }

@@ -1,4 +1,4 @@
-import { CREATE_DATA,  GET_DATA, UPDATE_DATA, DELETE_DATA } from "./const"
+import { CREATE_DATA,  GET_DATA, UPDATE_DATA, DELETE_DATA, } from "./const"
 
 const initialValue = {
     data:[],
@@ -22,6 +22,11 @@ export default function Reducer(state = initialValue, action)
             return{
                 ...state,
                 data: state.data.filter((item) => item.id !== action.payload),
+            }
+        case UPDATE_DATA:
+            return{
+                ...state,
+                data: state.data.map((item) => item.id == action.payload.id ? action.payload: item)
             }
         default:
             return state;

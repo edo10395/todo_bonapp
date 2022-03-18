@@ -6,7 +6,7 @@ import "./Form.css";
 export default function Form({ initialValue, setInitialValue }) {
   const colors = ["#fe9b72", "#fec971", " #00d4fe", "#fcba03", "#e4ee91"];
   const [listOpen, setListOpen] = useState(false);
-  console.log(listOpen+'list')
+
   return (
     <div>
       <TextField

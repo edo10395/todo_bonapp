@@ -1,21 +1,19 @@
 .card {
     padding: 25px;
-    height: 280px;
-    width: 260px;
+    height: 300px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     background-color: blueviolet;
     border-radius: 30px;
   }
   .card_text {
-    flex:12;
+    flex: 1;
     resize: none;
-    background-color: transparent;
     font-size: 1rem;
     line-height: 1.875rem;
     outline: none;
     border: none;
-    overflow-x: auto;
   }
   
   .card_footer {
@@ -26,10 +24,15 @@
 
   .card_header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-  
+  .card_body{
+    flex: 1;
+    overflow-y: scroll;
+
+  }
   .card_footer img, .card_header img {
     cursor: pointer;
     opacity: 0;
@@ -44,3 +47,4 @@
     color:dimgray;
   }
   
+   

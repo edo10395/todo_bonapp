@@ -19,23 +19,26 @@ function card(props) {
                 onClick={() => props.editCard(props.item)}
             />
         </div>
-        <p className="card_text">{props.item.description}</p>
-        <p className="footer_text">{props.item.createdAt}</p>
-        
+        <div className="card_body">
+          <p className="card_text">{props.item.description}</p>
+        </div>
         <div className="card_footer">
+          <div>
+            <small className="footer_text">{props.item.createdAt}</small>
+          </div>
           <img
             src={deleteIcon}
             alt="DELETE"
             onClick={() => props.deleteCard(props.item.id)}
           />
-           <NavLink to={`/idTodo/${props.item.id}`}>
+           {/* <NavLink to={`/idTodo/${props.item.id}/${props.item.title}`} >
               <img
                 src={arrow}
                 alt="arrow"
                 style={{width:'30px'}}
               />
             </NavLink>
-       
+        */}
         </div>
     </div>
   );

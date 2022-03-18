@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CardContainer from "../../components/CardsContainer/container";
 import Sidebar from "../../components/Sidebar/sidebar";
 import Dialog from './Dialog';
-import { createData, deleteData} from '../../store/todolist/action';
+import { createData, deleteData, updateData} from '../../store/todolist/action';
 import Swal from 'sweetalert2';
 
 function Index() {
@@ -34,8 +34,13 @@ function Index() {
         setNew(false)
     };
     const handleSave = () => {
-        dispatch(createData(initialValue))
-        handleClose()
+        // dispatch(createData(initialValue))
+        // handleClose()
+        if (initialValue.id > 0) {
+          dispatch(updateData(initialValue))
+        } else {
+          dispatch(createData(initialValue))
+        }
     }
 
     const deleteCard = (id) => {

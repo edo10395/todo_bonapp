@@ -10,7 +10,8 @@
     height: 90%;
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
     overflow-y: scroll;
   }
+  
   
