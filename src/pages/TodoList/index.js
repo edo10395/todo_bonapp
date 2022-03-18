@@ -38,7 +38,7 @@ function Index() {
         handleClose()
     }
 
-    const deleteCard = (data) => {
+    const deleteCard = (id) => {
         Swal.fire({
           title: 'Are you sure?',
           text: "You won't be able to revert this!",
@@ -49,12 +49,16 @@ function Index() {
           confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
           if (result.isConfirmed) {
-            dispatch(deleteData(data.id))
+            dispatch(deleteData(id))
           }
         })
         handleClose()
       }
-      console.log(data)
+
+      const editCard = (data) => {
+        setInitialValue(data)
+        setOpen(true);
+      }
     return (
         <div className="App">
             <Sidebar
@@ -73,7 +77,8 @@ function Index() {
             }
             <CardContainer
                 data={data}
-                deleteCard={(data) => deleteCard(data)}
+                deleteCard={deleteCard}
+                editCard={editCard}
             />
 
         </div>

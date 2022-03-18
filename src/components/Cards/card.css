@@ -23,6 +23,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  .card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .card_footer img, .card_header img {
     cursor: pointer;

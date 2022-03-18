@@ -15,7 +15,8 @@ function container(props) {
             <Card
               key={item.id}
               item={item}
-              deleteCard = {()=> props.deleteCard(item)}
+              deleteCard = {props.deleteCard}
+              editCard = {props.editCard}
             />
           ))
         ) : (
