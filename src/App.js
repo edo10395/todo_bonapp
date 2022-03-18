@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import './App.css';
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import configStore from './store';
+import TodoList from "./pages/TodoList"
+import Detail from "./pages/Detail"
+
+const { store, persistor } = configStore();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<TodoList />} />
+            {/* <Route path="/idTodo/:id" element={<Detail />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   );
 }
-
 export default App;

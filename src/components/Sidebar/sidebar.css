@@ -1,0 +1,11 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .sidebar img {
+    width: 60px;
+    cursor: pointer;
+  }
+  

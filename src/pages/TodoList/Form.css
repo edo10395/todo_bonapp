@@ -1,0 +1,19 @@
+  .list_color {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    height: 0;
+    transition: 300ms;
+    /* background-color: blue; */
+  }
+  .list_color_active {
+    height: 50px;
+  }
+  
+  .list_color_item {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    list-style: none;
+  }

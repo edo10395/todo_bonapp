@@ -1,0 +1,16 @@
+.card-container {
+    height: 100%;
+  }
+  
+  .card-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .card-container_cards {
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    overflow-y: scroll;
+  }
+  

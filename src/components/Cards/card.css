@@ -1,0 +1,41 @@
+.card {
+    padding: 25px;
+    height: 280px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    border-radius: 30px;
+  }
+  .card_text {
+    flex:12;
+    resize: none;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    outline: none;
+    border: none;
+    overflow-x: auto;
+  }
+  
+  .card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card_footer img, .card_header img {
+    cursor: pointer;
+    opacity: 0;
+    transition: 300ms;
+  }
+  
+  .card:hover .card_footer img, .card:hover .card_header img {
+    opacity: 1;
+  }
+  
+  
+  .footer_text{
+    color:dimgray;
+  }
+  
