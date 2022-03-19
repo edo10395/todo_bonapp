@@ -4,7 +4,7 @@ import deleteIcon from "../../assets/delete.svg";
 import arrow from "../../assets/right-arrow.svg";
 import edit from "../../assets/edit.svg";
 import { NavLink } from 'react-router-dom';
-
+import * as moment from 'moment'
 import "./card.css";
 
 function card(props) {
@@ -24,7 +24,7 @@ function card(props) {
         </div>
         <div className="card_footer">
           <div>
-            <small className="footer_text">{props.item.createdAt}</small>
+            <small className="footer_text">{moment(props.item.date).format("dddd, MMMM Do YYYY") }</small>
           </div>
           <img
             src={deleteIcon}

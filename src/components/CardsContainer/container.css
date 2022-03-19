@@ -3,15 +3,14 @@
   }
   
   .card-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .card-container_cards {
     height: 90%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     overflow-y: scroll;
   }
-  
   

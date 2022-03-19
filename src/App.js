@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import configStore from './store';
 import TodoList from "./pages/TodoList"
-import Detail from "./pages/Detail"
+// import Detail from "./pages/Detail"
 
 const { store, persistor } = configStore();
 
@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<TodoList />} />
             {/* <Route path="/idTodo/:id" element={<Detail />} /> */}
-            <Route path="/idTodo/:id/:name" element={<Detail />} />
+            {/* <Route path="/idTodo/:id/:name" element={<Detail />} /> */}
           </Routes>
         </BrowserRouter>
       </PersistGate>

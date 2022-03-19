@@ -7,17 +7,17 @@ import Form from './Form';
 import * as React from 'react';
 
 export default function FormDialog({ handleClose, open, initialValue, setInitialValue, handleSave, datanew, handleDelete }) {
-  // const [detail, setDetail] = React.useState(true)
-  // React.useEffect(() => {
-  //   if (datanew) {
-  //     setDetail(false)
-  //   }
-  // }, [])
+  const [status, setStatus] = React.useState(true)
+  React.useEffect(() => {
+    if (datanew) {
+      setStatus(false)
+    }
+  }, [])
 
   return (
     <div>
       <Dialog open={open} onClose={handleClose} fullWidth={true}>
-       
+      <DialogTitle>{status ? 'Update' : 'Form'}</DialogTitle>
         <DialogContent>
             <Form 
               initialValue={initialValue} 
@@ -26,8 +26,13 @@ export default function FormDialog({ handleClose, open, initialValue, setInitial
         </DialogContent>
         <DialogActions>
               <div>
-                <Button onClick={handleClose}>Cancel</Button>
-                <Button onClick={handleSave}>Save</Button>
+              <Button onClick={handleClose}>Cancel</Button>
+                {
+                  (status) ? 
+                   <Button onClick={handleSave}>Update</Button>
+                   : 
+                   <Button onClick={handleSave}>Save</Button>
+                }
               </div>
         </DialogActions>
       </Dialog>

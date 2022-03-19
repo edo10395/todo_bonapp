@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import CardContainer from "../../components/CardsContainer/container";
 import Sidebar from "../../components/Sidebar/sidebar";
+import Header from "../../components/Header/header";
 import Dialog from './Dialog';
 import { createData, deleteData, updateData} from '../../store/todolist/action';
 import Swal from 'sweetalert2';
-
+import * as moment from 'moment'
 function Index() {
 
   const dispatch = useDispatch()
   const { data } = useSelector(state => state.todolist)
   
-    const [card, setCard] = useState()
+    const [search, setSearch] = useState('')
+    const [statusSort, setStatusSort] = useState('')
     const [datanew, setNew] = useState(false)
     const [open, setOpen] = useState(false)
 
@@ -19,7 +21,7 @@ function Index() {
         id: 0,
         title: '',
         description: '',
-        status: false,
+        date: moment().format("YYYY-MM-DD"),
         color: false,
     }
     const [initialValue, setInitialValue] = useState(dataDefault)
@@ -34,13 +36,15 @@ function Index() {
         setNew(false)
     };
     const handleSave = () => {
-        // dispatch(createData(initialValue))
-        // handleClose()
         if (initialValue.id > 0) {
           dispatch(updateData(initialValue))
         } else {
           dispatch(createData(initialValue))
         }
+        handleClose()
+        setStatusSort('');
+        setSearch('');
+
     }
 
     const deleteCard = (id) => {
@@ -58,34 +62,49 @@ function Index() {
           }
         })
         handleClose()
-      }
+    }
 
-      const editCard = (data) => {
+    const editCard = (data) => {
         setInitialValue(data)
         setOpen(true);
-      }
+    }
+    const sortAsc = () => {
+        setStatusSort('asc');
+    }
+    const sortDesc = () => {
+      setStatusSort('desc');
+  }
+  // console.log(statusSort)
     return (
-        <div className="App">
-            <Sidebar
-                handleClickOpenCreate = {handleClickOpenCreate}
-            />
-            {
-                open && <Dialog
-                    handleClose={() => handleClose()}
-                    open={open}
-                    initialValue={initialValue}
-                    setInitialValue={setInitialValue}
-                    handleSave={() => handleSave()}
-                    datanew={datanew}
-                    // handleDelete={(data) => handleDelete(data)}
-                />
-            }
-            <CardContainer
-                data={data}
-                deleteCard={deleteCard}
-                editCard={editCard}
-            />
-
+        <div className="main">
+          <Header
+            setSearch  = {setSearch}
+            sortAsc  = {sortAsc}
+            sortDesc  = {sortDesc}
+            setStatusSort = {setStatusSort}
+          />
+          <div className="Content">
+              <Sidebar
+                  handleClickOpenCreate = {handleClickOpenCreate}
+              />
+              <CardContainer
+                  data={data}
+                  deleteCard={deleteCard}
+                  editCard={editCard}
+                  search={search}
+                  statusSort={statusSort}
+              />
+              {
+                  open && <Dialog
+                      handleClose={() => handleClose()}
+                      open={open}
+                      initialValue={initialValue}
+                      setInitialValue={setInitialValue}
+                      handleSave={() => handleSave()}
+                      datanew={datanew}
+                  />
+              }
+          </div>
         </div>
     );
 }
