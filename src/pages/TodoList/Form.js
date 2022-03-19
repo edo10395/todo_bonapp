@@ -1,12 +1,12 @@
 import { FormControlLabel, Switch } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import  React, {useState} from 'react';
+import React, { useState } from 'react';
 import "./TodoList.css";
 
-export default function Form({ initialValue, setInitialValue }) {
-  const colors = ["#fe9b72", "#fec971", " #00d4fe", "#fcba03", "#e4ee91"];
+export default function Form({ initialValue, setInitialValue, status }) {
+  const colors = ["#fe9b72", "#fec971", " #00d4fe", "#e3b6fc", "#e4ee91"];
   const [listOpen, setListOpen] = useState(false);
-  console.log(initialValue.date)
+
   return (
     <div>
       <TextField
@@ -30,12 +30,7 @@ export default function Form({ initialValue, setInitialValue }) {
         onChange={(e) => setInitialValue(p => ({ ...p, description: e.target.value }))}
         value={initialValue.description}
       />
-      {/* <FormControlLabel
-        control={
-          <Switch checked={initialValue.status} onChange={(e) => setInitialValue(p => ({ ...p, status: e.target.checked }))} name="antoine" />
-        }
-        label="Status"
-      /> */}
+    
         <TextField
           id="date"
           label="Date"
@@ -54,7 +49,7 @@ export default function Form({ initialValue, setInitialValue }) {
         control={
           <Switch checked={listOpen}  onChange={(e) => setListOpen(!listOpen)} name="antoine" />
         }
-        label={(initialValue.color.length > 0) ? 'Change Color': 'Color'}
+        label={(status) ? 'Change Color': 'Color'}
       />
 
        <ul className={`list_color ${listOpen || initialValue.color.length >0? "list_color_active" : ""}`}>

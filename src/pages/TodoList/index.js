@@ -74,8 +74,8 @@ function Index() {
     const sortDesc = () => {
       setStatusSort('desc');
   }
-  // console.log(statusSort)
-    return (
+
+  return (
         <div className="main">
           <Header
             setSearch  = {setSearch}
@@ -94,17 +94,18 @@ function Index() {
                   search={search}
                   statusSort={statusSort}
               />
-              {
-                  open && <Dialog
-                      handleClose={() => handleClose()}
-                      open={open}
-                      initialValue={initialValue}
-                      setInitialValue={setInitialValue}
-                      handleSave={() => handleSave()}
-                      datanew={datanew}
-                  />
-              }
+             
           </div>
+          {
+              open && <Dialog
+                  handleClose={() => handleClose()}
+                  open={open}
+                  initialValue={initialValue}
+                  setInitialValue={setInitialValue}
+                  handleSave={() => handleSave()}
+                  datanew={datanew}
+              />
+          }
         </div>
     );
 }

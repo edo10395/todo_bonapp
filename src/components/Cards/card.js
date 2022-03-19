@@ -1,7 +1,5 @@
 import React from "react";
-
 import deleteIcon from "../../assets/delete.svg";
-import arrow from "../../assets/right-arrow.svg";
 import edit from "../../assets/edit.svg";
 import { NavLink } from 'react-router-dom';
 import * as moment from 'moment'

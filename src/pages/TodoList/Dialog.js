@@ -22,6 +22,7 @@ export default function FormDialog({ handleClose, open, initialValue, setInitial
             <Form 
               initialValue={initialValue} 
               setInitialValue={setInitialValue} 
+              status = {status}
             />
         </DialogContent>
         <DialogActions>

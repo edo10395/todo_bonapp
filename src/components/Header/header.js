@@ -1,9 +1,8 @@
-import React from "react";
-import TextField from '@mui/material/TextField';
-import "./header.css";
-import sortIcon from "../../assets/ascending-sort.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownAZ, faArrowUpZA } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import TextField from '@mui/material/TextField';
+import React from "react";
+import "./header.css";
 function header(props) {
 
   return (
@@ -24,12 +23,6 @@ function header(props) {
             <p>Asc</p>
         </div>
         <div className="desc" onClick={() => props.setStatusSort('desc')} >
-            {/* <img 
-                src={sortIcon} alt="Search" 
-                width={20}
-                className="rotate"
-                onClick={() => props.setStatusSort('desc')} 
-            /> */}
             <FontAwesomeIcon icon={faArrowUpZA} />
             <p>Desc</p>
         </div>
