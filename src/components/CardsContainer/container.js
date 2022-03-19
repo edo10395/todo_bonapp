@@ -10,7 +10,6 @@ function container(props) {
      
       {
         props.data?.length > 0 ? (
-
         props.data.filter((val) =>{
             if(props.search == ""){
                 return val
