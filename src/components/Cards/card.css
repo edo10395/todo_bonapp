@@ -4,7 +4,7 @@
     width: 300px;
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
+    background-color: gainsboro;
     border-radius: 30px;
   }
   .card_text {
