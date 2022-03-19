@@ -1,8 +1,9 @@
 # Getting Started with Create React App
 1.Clone Project.\
 2.npm install.\
-4.npm start.
-Url Demo : https://todo-bonapp-edo10395.vercel.app
+4.npm start.\
+Url Demo : https://todo-bonapp-edo10395.vercel.app.\
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
