@@ -30,7 +30,6 @@ function container(props) {
               editCard = {props.editCard}
             />
           ))
-          
         ) 
         : (<h3>No Data Present</h3>)
       }
